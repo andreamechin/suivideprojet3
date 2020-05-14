@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 html {
     font-size: 62.5%;
 
     body {
         font-size: 1.6rem;
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
         line-height: 1.8;
         margin: 0;
+        color: #262626;
 
         header {
             padding: 30px;
@@ -13,16 +16,36 @@ html {
             nav {
                 display: flex;
                 justify-content: space-between;
+
+                a {
+                    text-decoration: none;
+                    color: #262626;
+                }
+
+                a:hover {
+                    color: rgba(154, 195, 212, 0.651);
+                }
+
+                .titre {
+                    font-size: 3rem;
+                }
             }
         }
 
         main {
             form {
+                font-size: 1.3rem;
                 text-align: center;
                 width: 40%;
                 margin: auto;
                 border: solid rgb(154, 196, 212) 1px;
                 border-radius: 40px;
+                background-color: rgba(154, 195, 212, 0.651);
+
+                div {
+                    display: flex;
+                    justify-content: space-around;
+                }
 
                 input,
                 button {
@@ -30,7 +53,6 @@ html {
                     margin: 10px;
                     padding: 5px;
                     border-radius: 40px;
-                    background-color: rgba(154, 195, 212, 0.651);
                 }
             }
 
