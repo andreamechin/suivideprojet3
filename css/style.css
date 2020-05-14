@@ -1,0 +1,25 @@
+/**********************************GENERAL********************************************/
+html {
+  font-size: 62.5%;
+  /*  1rem = 10px    3em = 16*3/10 rem */
+}
+
+html body {
+  font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.8;
+  margin: 0;
+}
+
+html body header {
+  padding: 30px;
+}
+
+html body header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+/*# sourceMappingURL=style.css.map */

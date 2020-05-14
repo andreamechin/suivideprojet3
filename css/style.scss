@@ -1,0 +1,37 @@
+/**********************************GENERAL********************************************/
+
+html {
+    font-size: 62.5%;
+
+    /*  1rem = 10px    3em = 16*3/10 rem */
+    body {
+        font-size: 1.6rem;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.8;
+        margin: 0;
+
+        header {
+            padding: 30px;
+
+            nav {
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    }
+
+}
+
+// .flex {
+//     display: flex;
+//     justify-content: space-around;
+//     flex-wrap: wrap;
+// }
+
+// a {
+//     text-decoration: none;
+// }
+
+// img {
+//     max-width: 100%;
+// }
