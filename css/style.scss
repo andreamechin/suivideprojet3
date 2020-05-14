@@ -22,15 +22,38 @@ html {
                 width: 40%;
                 margin: auto;
                 border: solid rgb(154, 196, 212) 1px;
-                border-radius: 50px;
+                border-radius: 40px;
 
                 input,
                 button {
                     text-align: center;
                     margin: 10px;
                     padding: 5px;
-                    border-radius: 50px;
+                    border-radius: 40px;
                     background-color: rgba(154, 195, 212, 0.651);
+                }
+            }
+
+            .nouveaux {
+                margin: 50px;
+                text-align: center;
+
+                .container {
+                    display: flex;
+                    justify-content: space-around;
+                    text-align: center;
+
+                    .product {
+                        background-color: rgba(154, 195, 212, 0.651);
+                        padding: 0;
+                        margin: 20px;
+                        border-radius: 40px;
+
+                        img {
+                            width: 100%;
+                            border-radius: 40px;
+                        }
+                    }
                 }
             }
         }
