@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="css/style.scss" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <title>exercice creation site web</title>
 
     <!-- icone navigateur -->
@@ -20,9 +20,26 @@
 <body>
 
     <header>
-        <h1>Nom du site </h1>
+        <nav>
+            <a>Logo</a>
+            <a>Connexion</a>
+        </nav>
     </header>
-    <main> </main>
+    <main>
+        <div>
+            <form action="/ma-page-de-traitement" method="post">
+                <h1>Je veux voyager</h1>
+                <div>
+                    <input type="text" id="ou" name="ou" value="OU ?">
+                </div>
+                <div>
+                    <input type="text" id="quand" name="quand" value="QUAND ?">
+                </div>
+                <button type="submit">Rechercher</button>
+            </form>
+
+        </div>
+    </main>
     <footer></footer>
 
 </body>
