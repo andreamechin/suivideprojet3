@@ -5,10 +5,12 @@ html {
 
 html body {
   font-size: 1.6rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.8;
   margin: 0;
   color: #262626;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(154, 194, 212, 0.212)), to(rgba(154, 194, 212, 0.288)));
+  background: linear-gradient(rgba(154, 194, 212, 0.212), rgba(154, 194, 212, 0.288));
 }
 
 html body header {
@@ -37,14 +39,22 @@ html body header nav .titre {
   font-size: 3rem;
 }
 
+html body main {
+  width: 90%;
+  margin: auto;
+  background-color: white;
+  border-radius: 40px;
+  padding-top: 50px;
+}
+
 html body main form {
   font-size: 1.3rem;
   text-align: center;
-  width: 40%;
+  width: 70%;
   margin: auto;
-  border: solid #9ac4d4 1px;
   border-radius: 40px;
-  background-color: rgba(154, 195, 212, 0.651);
+  -webkit-box-shadow: 10px 5px 5px #9ac4d4;
+          box-shadow: 10px 5px 5px #9ac4d4;
 }
 
 html body main form div {
@@ -59,12 +69,17 @@ html body main form input,
 html body main form button {
   text-align: center;
   margin: 10px;
-  padding: 5px;
+  padding: 7px;
   border-radius: 40px;
 }
 
+html body main form button {
+  background-color: #9ac4d4;
+}
+
 html body main .nouveaux {
-  margin: 50px;
+  padding: 50px 0;
+  margin: 10px 20px;
   text-align: center;
 }
 
