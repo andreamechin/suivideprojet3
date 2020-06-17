@@ -54,7 +54,7 @@ html {
         margin: auto;
         border-radius: 40px;
 
-        div {
+        .flex {
           display: flex;
           justify-content: space-around;
         }
@@ -97,6 +97,7 @@ html {
       }
     }
 
+    /*********************************PRODUCT PAGE **************************************************/
     .product_page {
       padding: 40px;
       // img {
@@ -134,5 +135,22 @@ html {
       }
     }
 
+    /************************************ page connexion **************************************/
+    #connexion {
+      padding: 10px;
+
+      h3 {
+        text-align: center;
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(148, 195, 214);
+      }
+
+      a:hover {
+        color: rgb(102, 181, 212);
+      }
+    }
   }
 }

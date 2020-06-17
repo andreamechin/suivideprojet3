@@ -1,0 +1,101 @@
+<!-- <?php session_start();
+include "scriptBDD.php";
+
+?> -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+
+    <!-- icones fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>suivi de projet 3</title>
+
+    <!-- icone navigateur -->
+    <link rel="icon" type="image/png" href="image.png" />
+
+</head>
+
+
+<body>
+
+    <header>
+        <nav>
+            <a class="logo"><img src="logo3.png"></a>
+            <a href="index.html" class="titre">Blue Hotel</a>
+            <a href="connexion.html">Connexion</a>
+        </nav>
+    </header>
+    <main id="connexion">
+
+        <h3>Connexion</h3>
+        <form method="POST" action="<?=$prefix?>/auth/login">
+            <div class="flex">
+                <label for="email">Addresse e-mail</label>
+
+                <div>
+                    <input id="email" type="email" name="email" required autocomplete="email" autofocus>
+                    <br>
+                </div>
+            </div>
+            <div class="flex">
+                <label for="password">Mot de passe</label>
+                <div>
+                    <input id="password" type="password" name="password" required autocomplete="current-password">
+                    <br>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <button type="submit">
+                        Connexion
+                    </button>
+                    <br>
+                    <a href="<?=$prefix?>/auth/reset">
+                        Mot de passe oublié ?
+                    </a>
+                    <br>
+                    <a href="<?=$prefix?>/auth/register">
+                        S'inscrire
+                    </a>
+                </div>
+            </div>
+        </form>
+    </main>
+    <!-- <?php if (isset($_SESSION['id'])) :
+        // $infoUser = getUser($_SESSION['id']);
+        $infoLoca = getLoca($_SESSION['id']);
+        //var_dump($_SESSION);
+        ?> -->
+    <!-- <form action="traitementDeco.php">
+            <button type="submit" name="deconnexion">Déconnexion</button>
+        </form>
+
+    <div id="info_utilisateur">
+        <p><?php $infoUser[0] ?>nom </p>
+    </div>
+    <div id="info_location"> -->
+
+    <!-- <table>
+            <tr>
+                <td>Nom</td>
+                <td>description</td>
+                <td>adresse</td>
+                <td>ville</td>
+                <td>nbPersonne</td>
+                <td>debut</td>
+                <td>durée</td>
+            </tr>
+            
+        </table> -->
+
+
+</body>
+
+</html>

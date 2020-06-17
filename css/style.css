@@ -11,6 +11,8 @@ html body {
   color: #262626;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(154, 194, 212, 0.212)), to(rgba(154, 194, 212, 0.288)));
   background: linear-gradient(rgba(154, 194, 212, 0.212), rgba(154, 194, 212, 0.288));
+  /*********************************PRODUCT PAGE **************************************************/
+  /************************************ page connexion **************************************/
 }
 
 html body header {
@@ -61,7 +63,7 @@ html body main form {
   border-radius: 40px;
 }
 
-html body main form div {
+html body main form .flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -141,5 +143,22 @@ html body .product_page .right-column {
   float: right;
   margin-top: -270px;
   padding-right: 70px;
+}
+
+html body #connexion {
+  padding: 10px;
+}
+
+html body #connexion h3 {
+  text-align: center;
+}
+
+html body #connexion a {
+  text-decoration: none;
+  color: #94c3d6;
+}
+
+html body #connexion a:hover {
+  color: #66b5d4;
 }
 /*# sourceMappingURL=style.css.map */
