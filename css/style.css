@@ -107,4 +107,39 @@ html body main .nouveaux .container .product img {
   width: 100%;
   border-radius: 40px;
 }
+
+html body .product_page {
+  padding: 40px;
+}
+
+html body .product_page .mySlides {
+  display: none;
+  width: 550px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin-left: 170px;
+  margin-top: -310px;
+}
+
+html body .product_page .cursor {
+  cursor: pointer;
+}
+
+html body .product_page .demo {
+  opacity: 0.4;
+  width: 80px !important;
+  margin: 10px;
+}
+
+html body .product_page .active,
+html body .product_page .demo:hover {
+  opacity: 1;
+}
+
+html body .product_page .right-column {
+  float: right;
+  margin-top: -270px;
+  padding-right: 70px;
+}
 /*# sourceMappingURL=style.css.map */
