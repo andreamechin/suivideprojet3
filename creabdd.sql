@@ -31,10 +31,10 @@ Create table Location (
 );
 
 
-INSERT INTO Utilisateur(idUtili,nom,mail,mdp) VALUES (1, 'Andréa', 'Méchin','andréa@gmail.com','andrea123');
-INSERT INTO Utilisateur(idUtili,nom,mail,mdp) VALUES (2, 'Mechin', 'Aymeric','mechin@gmail.com','mechin123');
-INSERT INTO Utilisateur(idUtili,nom,mail,mdp) VALUES (3, 'Aymeric', 'Jacob','aymeric@gmail.com','aymeric123');
-INSERT INTO Utilisateur(idUtili,nom,mail,mdp) VALUES (4, 'Jacob', 'Andréa','jacob@gmail.com','jacob123');
+INSERT INTO Utilisateur(idUtili,nom,prenom,mail,mdp) VALUES (1, 'Andréa', 'Méchin','andréa@gmail.com','andrea123');
+INSERT INTO Utilisateur(idUtili,nom,prenom,mail,mdp) VALUES (2, 'Mechin', 'Aymeric','mechin@gmail.com','mechin123');
+INSERT INTO Utilisateur(idUtili,nom,prenom,mail,mdp) VALUES (3, 'Aymeric', 'Jacob','aymeric@gmail.com','aymeric123');
+INSERT INTO Utilisateur(idUtili,nom,prenom,mail,mdp) VALUES (4, 'Jacob', 'Andréa','jacob@gmail.com','jacob123');
 
 
 INSERT INTO Logement(idLogem,nom,description,adresse,ville,prix,nbPersonne) VALUES (1, 'Maison Campagne paumée','Jolie petite maison dans une campgne paumée au milieu de rien','17 laBellerie','La Chevrolliere','50','5');
