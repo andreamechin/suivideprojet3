@@ -10,7 +10,7 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <title>suivi de projet 3</title>
+    <title>exercice creation site web</title>
 
     <!-- icone navigateur -->
     <link rel="icon" type="image/png" href="image.png" />
@@ -23,28 +23,31 @@
         <nav>
             <a class="logo"><img src="logo3.png"></a>
             <a href="index.html" class="titre">Blue Hotel</a>
-            <a href="connexion.html">Connexion</a>
+            <a>Connexion</a>
         </nav>
     </header>
-    <main>
-        <div>
-            <form action="/ma-page-de-traitement" method="post">
-                <h1 class="titre">Je veux voyager</h1>
-                <div class="flex">
-                    <div>
-                        <input type="text" id="ou" name="ou" value="OU ?">
-                    </div>
-                    <div>
-                        <input type="text" id="quand" name="quand" value="QUAND ?">
-                    </div>
-                    <button type="submit">Rechercher</button>
-                </div>
-            </form>
 
+
+    <main class="profil">
+        <div class="container">
+
+            <div class="left-column">
+                <img src="pdp_H.png" alt="photo de profil">
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <h2>
+                    <p>Prenom</p>
+                    <p>Nom</p>
+                </h2>
+                <p>mail</p>
+            </div>
         </div>
 
-        <div class="nouveaux">
-            <h2>Les nouveautés</h2>
+        <div class="favoris">
+            <h2>Mes favoris</h2>
+
             <div class="container">
                 <div class="product">
                     <img
@@ -63,7 +66,9 @@
                 </div>
             </div>
         </div>
+
     </main>
-    <footer></footer>
 
 </body>
+
+</html>

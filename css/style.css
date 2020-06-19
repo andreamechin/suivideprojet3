@@ -13,6 +13,7 @@ html body {
   background: linear-gradient(rgba(154, 194, 212, 0.212), rgba(154, 194, 212, 0.288));
   /*********************************PRODUCT PAGE **************************************************/
   /************************************ page connexion **************************************/
+  /************************************ page profil **************************************/
 }
 
 html body header {
@@ -52,7 +53,6 @@ html body main {
   margin: auto;
   background-color: white;
   border-radius: 40px;
-  padding-top: 50px;
 }
 
 html body main form {
@@ -61,6 +61,10 @@ html body main form {
   width: 70%;
   margin: auto;
   border-radius: 40px;
+}
+
+html body main form .titre {
+  padding-top: 50px;
 }
 
 html body main form .flex {
@@ -173,5 +177,58 @@ html body #connexion a {
 
 html body #connexion a:hover {
   color: #66b5d4;
+}
+
+html body .profil .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 80%;
+  text-align: center;
+  padding: 20px;
+}
+
+html body .profil .container .left-column img {
+  width: 40%;
+}
+
+html body .profil .container .right-column h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+html body .profil .container .right-column h2 p {
+  margin: 10px;
+}
+
+html body .profil .favoris {
+  text-align: center;
+  padding-top: 20px;
+}
+
+html body .profil .favoris .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: auto;
+}
+
+html body .profil .favoris .container .product {
+  background-color: rgba(154, 195, 212, 0.651);
+  padding: 0;
+  margin: 20px;
+  border-radius: 40px;
+}
+
+html body .profil .favoris .container .product img {
+  width: 100%;
+  border-radius: 40px;
 }
 /*# sourceMappingURL=style.css.map */
