@@ -17,45 +17,56 @@ include "scriptBDD.php";
 <?php if (isset($_SESSION['id'])) :
     $infoUser = getUser($_SESSION['id']);
     $infoLoca = getLoca($_SESSION['id']);
-    //var_dump($_SESSION);
+    if(isset($_SESSION['recherche'])){
+        $herbergement = getHeberge($_SESSION['recherche']);
+        var_dump($herbergement);
+    }
+    var_dump($_SESSION);
     ?>
     <form action="traitementDeco.php">
         <button type="submit" name="deconnexion">Déco</button>
     </form>
 
     <div id="info_utilisateur">
-         <p><?php echo($infoUser[0]) ?></p>
+        <p><?php echo($infoUser[0]) ?></p>
     </div>
     <div id="info_location">
-    <?php if ($infoLoca != 666) : ?>
-        <table>
-            <tr>
-                <td>Nom</td>
-                <td>description</td>
-                <td>adresse</td>
-                <td>ville</td>
-                <td>nbPersonne</td>
-                <td>debut</td>
-                <td>durée</td>
-            </tr>
-        <?php //var_dump($infoLoca);
-        for($ii = 0; $ii < sizeof($infoLoca); $ii++) :?>
-            <tr>
-                <td><?php echo($infoLoca[$ii][0]); ?></td>
-                <td><?php echo($infoLoca[$ii][1]); ?></td>
-                <td><?php echo($infoLoca[$ii][2]); ?></td>
-                <td><?php echo($infoLoca[$ii][3]); ?></td>
-                <td><?php echo($infoLoca[$ii][4]); ?></td>
-                <td><?php echo($infoLoca[$ii][5]); ?></td>
-                <td><?php echo($infoLoca[$ii][6]); ?></td>
-            </tr>
-        <?php endfor; ?>
-        </table>
+        <?php if ($infoLoca != 666) : ?>
+            <table>
+                <tr>
+                    <td>Nom</td>
+                    <td>description</td>
+                    <td>adresse</td>
+                    <td>ville</td>
+                    <td>nbPersonne</td>
+                    <td>debut</td>
+                    <td>durée</td>
+                </tr>
+                <?php //var_dump($infoLoca);
+                for($ii = 0; $ii < sizeof($infoLoca); $ii++) :?>
+                    <tr>
+                        <?php for($jj = 0; $jj <= 6; $jj++) :?>
+                        <td><?php echo($infoLoca[$ii][$jj]); ?></td>
+                        <?php endfor; ?>
+                    </tr>
+                <?php endfor; ?>
+            </table>
 
-    <?php else : ?>
-        <p>Vous n'avez aucune réservation</p>
-    <?php endif; ?>
+        <?php else : ?>
+            <p>Vous n'avez aucune réservation</p>
+        <?php endif; ?>
     </div>
+
+
+    <div id="rechercheHeberge">
+        <form action="traitementRecherche.php" method="post">
+            <input id="barreRecherche" name="barreRecherche" required="required" type="text" placeholder="Ex : Nantes"/>
+            <button type="submit" name="recherche"/>Go!</button>
+        </form>
+    </div>
+                        
+
+
 
 
 <?php else : ?>
@@ -81,7 +92,7 @@ include "scriptBDD.php";
                 <input id="inscriSurname" name="prenom" required="required" type="text" placeholder="Prénom" />
             </p>
             <p>
-                <input id="inscriMail" name="mail" required="required" type=text" placeholder="mail"
+                <input id="inscriMail" name="mail" required="required" type="text" placeholder="mail"
             </p>
             <p>
                 <input id="inscriPassword" name="mdp" required="required" type="password" placeholder="Mot de passe" />

@@ -45,30 +45,34 @@ function seConnecter($login, $mdp) {
 }
 
 function sInscrireCheck($name,$surname, $login, $mdp){
-
+/*
     $namePattern = 0;
     if(preg_match($namePattern, $name)){
         $nameChecked = true;
     }else{
         $nameChecked = false;
     }
-
-    $mailPattern = '/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g';
-    if(preg_match($mailPattern, $login)){
+*/
+    /*$mailPattern = '/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g';*/
+    $pdo = connectBDD();
+    $rows = $pdo->query("SELECT * FROM utilisateur WHERE utilisateur.mail ='".$login."'");
+    $checkVideMail = $rows->rowCount();
+    if(/*preg_match($mailPattern, $login) &&*/ $checkVideMail == 0){
         $mailChecked = true;
     }else{
         $mailChecked = false;
     }
 
+/*
     $mdpPattern = 0;
     if(preg_match($mdpPattern, $mdp)){
         $mdpChecked = true;
     }else{
         $mdpChecked = false;
     }
+*/
 
-
-    if($nameChecked == true && $mailChecked == true && $mdpChecked == true) {
+    if(/*$nameChecked == true &&*/ $mailChecked == true /*&& $mdpChecked == true*/) {
         return true;
     }else{
         return false;
@@ -140,3 +144,19 @@ function getLoca($idUser) {
     return $tabInfoLoca;
 }
 
+function getHeberge($recherche) {
+    $pdo = connectBDD();
+    $rows = $pdo->query("SELECT * FROM logement WHERE logement.ville ='".$recherche."'");
+    $checkVide = $rows->rowCount();
+    if($checkVide != 0){
+        $tabHeberge = array();
+        $rows = $rows->fetchAll();
+        for($ii = 0; $ii<sizeof($rows);$ii++){
+            //var_dump($rows);
+            array_push($tabHeberge, $rows[$ii]);
+        }
+        return $tabHeberge;
+    }
+    return;
+
+}
