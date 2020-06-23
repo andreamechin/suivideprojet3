@@ -11,4 +11,4 @@ if(isset($_SESSION['recherche'])){
 	$_SESSION += ["recherche" => $_POST['barreRecherche']];
 }
 
-header('Location: index.php');
+header('Location: products.php');

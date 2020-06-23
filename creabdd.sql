@@ -37,7 +37,7 @@ INSERT INTO Utilisateur(idUtili,nom,prenom,mail,mdp) VALUES (3, 'Aymeric', 'Jaco
 INSERT INTO Utilisateur(idUtili,nom,prenom,mail,mdp) VALUES (4, 'Jacob', 'Andréa','jacob@gmail.com','jacob123');
 
 
-INSERT INTO Logement(idLogem,nom,description,adresse,ville,prix,nbPersonne) VALUES (1, 'Maison Campagne paumée','Jolie petite maison dans une campgne paumée au milieu de rien','17 laBellerie','La Chevrolliere','50','5');
+INSERT INTO Logement(idLogem,nom,description,adresse,ville,prix,nbPersonne) VALUES (1, 'Maison Campagne paumée','Jolie petite maison dans une campagne paumée au milieu de rien','17 laBellerie','La Chevrolliere','50','5');
 INSERT INTO Logement(idLogem,nom,description,adresse,ville,prix,nbPersonne) VALUES (2, 'Maison de ville','maison avec un boulot pleureur a coté dune eglise rouge','20 rue georges melies','Nantes','55','4');
 
 INSERT INTO Location(idLoca,dateDebut,dureeJour,idUtili,idLogem) VALUES (1, '18/06/2020',7,3,1);

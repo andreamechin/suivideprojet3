@@ -1,3 +1,7 @@
+<?php session_start();
+include "scriptBDD.php";
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -22,12 +26,16 @@
     <header>
         <nav>
             <a class="logo"><img src="logo3.png"></a>
-            <a href="index.html" class="titre">Blue Hotel</a>
-            <a>Connexion</a>
+            <a href="index.php" class="titre">Blue Hotel</a>
+            <a href="traitementDeco.php">Déconnexion</a>
         </nav>
     </header>
 
-
+  <?php if (isset($_SESSION['id'])) : 
+    //var_dump($_GET['id']);
+    $tabHebergeSel = getHebergeSel($_GET['id']);
+    var_dump($tabHebergeSel);
+  ?>
     <main class="product_page">
 
         <!-- Left Column / Headphones Image -->
@@ -78,16 +86,25 @@
             <div class="right-column">
                 <!-- Product Description -->
                 <div class="product-description">
-                    <h1>NOM.</h1>
-                    <p>description. </p>
+                    <h1><?php echo($tabHebergeSel[0]);?></h1>
+                    <p><?php echo($tabHebergeSel[1]);?></p>
+                    <p><?php echo($tabHebergeSel[2]);?>, <?php echo($tabHebergeSel[3]);?></p>
+                    <p>Location pour <?php echo($tabHebergeSel[5]);?> personne(s) max.</p>
                 </div>
 
                 <!-- Product Pricing -->
                 <div class="product-price">
-                    <span>30$ la nuit</span>
-                    <a href="#" class="favori"><i class="fas fa-heart"></i></a>
+                    <span><?php echo($tabHebergeSel[4]);?>€ par nuit</span>
                 </div>
-                <button>Réserver</button>
+                <div>
+                    <form action=<?php echo("traitementReservation.php?id=".$_GET['id']);?> method="post">
+                        <p>Date début</p>
+                        <input id="date" name="date" required="required" type="date">
+                        <p>Nombre de jour</p>
+                        <input id="nbJour" name="nbJour" required="required" type="number" min="1" placeholder="Nombre de jour"/> 
+                        <button type="submit" name="reserver"/>Je réserve !</button>    
+                    </form>
+                </div>
             </div>
         </div>
 
@@ -128,6 +145,9 @@
         }
     </script>
 
+    <?php else :
+        header('Location: connexion.php'); 
+        endif;?>
 </body>
 
 </html>

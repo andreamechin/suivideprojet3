@@ -3,110 +3,70 @@ include "scriptBDD.php";
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+
 <head>
-    <!--<link rel="stylesheet" href="assests/styles.css">-->
-    <meta charset="UTF-8">
-    <title>Blue Hotel</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+
+    <!-- icones fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>suivi de projet 3</title>
+
+    <!-- icone navigateur -->
+    <link rel="icon" type="image/png" href="image.png" />
+
 </head>
+
 <body>
-<header>
+    <?php if (isset($_SESSION['id'])) :?>
+    <header>
+        <nav>
+            <a class="logo"><img src="logo3.png"></a>
+            <a href="index.php" class="titre">Blue Hotel</a>
+            <a href="traitementDeco.php">Déconnexion</a>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <h1 class="titre">Je veux voyager</h1>
+            <div class="flex">
+                <div id="rechercheHeberge">
+                    <form action="traitementRecherche.php" method="post">
+                        <input id="barreRecherche" name="barreRecherche" required="required" type="text" placeholder="Ex : Nantes"/> 
+                        <button type="submit" name="recherche"/>Go!</button>    
+                    </form>
+                </div>
+            </div>
+        </div>
 
-</header>
-
-<?php if (isset($_SESSION['id'])) :
-    $infoUser = getUser($_SESSION['id']);
-    $infoLoca = getLoca($_SESSION['id']);
-    if(isset($_SESSION['recherche'])){
-        $herbergement = getHeberge($_SESSION['recherche']);
-        var_dump($herbergement);
-    }
-    var_dump($_SESSION);
-    ?>
-    <form action="traitementDeco.php">
-        <button type="submit" name="deconnexion">Déco</button>
-    </form>
-
-    <div id="info_utilisateur">
-        <p><?php echo($infoUser[0]) ?></p>
-    </div>
-    <div id="info_location">
-        <?php if ($infoLoca != 666) : ?>
-            <table>
-                <tr>
-                    <td>Nom</td>
-                    <td>description</td>
-                    <td>adresse</td>
-                    <td>ville</td>
-                    <td>nbPersonne</td>
-                    <td>debut</td>
-                    <td>durée</td>
-                </tr>
-                <?php //var_dump($infoLoca);
-                for($ii = 0; $ii < sizeof($infoLoca); $ii++) :?>
-                    <tr>
-                        <?php for($jj = 0; $jj <= 6; $jj++) :?>
-                        <td><?php echo($infoLoca[$ii][$jj]); ?></td>
-                        <?php endfor; ?>
-                    </tr>
-                <?php endfor; ?>
-            </table>
-
-        <?php else : ?>
-            <p>Vous n'avez aucune réservation</p>
-        <?php endif; ?>
-    </div>
-
-
-    <div id="rechercheHeberge">
-        <form action="traitementRecherche.php" method="post">
-            <input id="barreRecherche" name="barreRecherche" required="required" type="text" placeholder="Ex : Nantes"/>
-            <button type="submit" name="recherche"/>Go!</button>
-        </form>
-    </div>
-                        
-
-
-
-
-<?php else : ?>
-    <div>
-        <form  action="traitementLogin.php" autocomplete="on" method="post">
-            <h1>Bienvenue :</h1>
-            <p>
-                <input id="username" name="login" required="required" type="text" placeholder="Identifiant"/>
-            </p>
-            <p>
-                <input id="password" name="mdp" required="required" type="password" placeholder="Mot de passe" />
-            </p>
-            <p class="login button">
-                <input type="submit" value="connexion" />
-            </p>
-        </form>
-        <form action="traitementInscription.php" autocomplete="on" method="post">
-            <p>Pas de compte?</p>
-            <p>
-                <input id="inscriName" name="nom" required="required" type="text" placeholder="Nom" />
-            </p>
-            <p>
-                <input id="inscriSurname" name="prenom" required="required" type="text" placeholder="Prénom" />
-            </p>
-            <p>
-                <input id="inscriMail" name="mail" required="required" type="text" placeholder="mail"
-            </p>
-            <p>
-                <input id="inscriPassword" name="mdp" required="required" type="password" placeholder="Mot de passe" />
-            </p>
-            <button type="submit" name="inscription">S'inscrire</button>
-        </form>
-    </div>
-<?php endif;?>
-
-
-<footer>
-
-</footer>
+        <div class="nouveaux">
+            <h2>Les nouveautés</h2>
+            <div class="container">
+                <div class="product">
+                    <img
+                        src="https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-29700095-unapproved/original/77a34b8e-70e1-49c0-b112-0abaa7b38472.JPEG?aki_policy=xx_large">
+                    <p>Description</p>
+                </div>
+                <div class="product">
+                    <img
+                        src="https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-29700095-unapproved/original/77a34b8e-70e1-49c0-b112-0abaa7b38472.JPEG?aki_policy=xx_large">
+                    <p>Description</p>
+                </div>
+                <div class="product">
+                    <img
+                        src="https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-29700095-unapproved/original/77a34b8e-70e1-49c0-b112-0abaa7b38472.JPEG?aki_policy=xx_large">
+                    <p>Description</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <?php else :
+    header('Location: connexion.php');
+    endif; ?>
+    <footer></footer>
 
 </body>
-</html>
-

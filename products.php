@@ -1,3 +1,8 @@
+<?php session_start();
+include "scriptBDD.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -22,34 +27,35 @@
     <header>
         <nav>
             <a class="logo"><img src="logo3.png"></a>
-            <a href="index.html" class="titre">Blue Hotel</a>
-            <a>Connexion</a>
+            <a href="index.php" class="titre">Blue Hotel</a>
+            <a href="traitementDeco.php">Déconnexion</a>
         </nav>
     </header>
-
-
-    <main class="profil">
-        <div class="container">
-
-            <div class="left-column">
-                <img src="pdp_H.png" alt="photo de profil">
-            </div>
-
-            <!-- Right Column -->
-            <div class="right-column">
-                <h2>
-                    <p>Prenom</p>
-                    <p>Nom</p>
-                </h2>
-                <p>mail</p>
+  <?php if (isset($_SESSION['id'])) :
+    if(isset($_SESSION['recherche'])) :
+        $hebergement = getHeberge($_SESSION['recherche']);
+        //var_dump($hebergement);
+    endif;?>
+    <main>
+        <div class="flex">
+            <div id="rechercheHeberge">
+                <form action="traitementRecherche.php" method="post">
+                    <input id="barreRecherche" name="barreRecherche" required="required" type="text" placeholder="Ex : Nantes"/> 
+                    <button type="submit" name="recherche"/>Go!</button>    
+                </form>
             </div>
         </div>
-
-        <div class="favoris">
-            <h2>Mes favoris</h2>
-
+        <div class="nouveaux">
+            <h2>Locations correspondantes à votre recherche</h2>
             <div class="container">
+                <?php for($ii = 0; $ii < sizeof($hebergement); $ii++) :?>
                 <div class="product">
+                    <img
+                        src="https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-29700095-unapproved/original/77a34b8e-70e1-49c0-b112-0abaa7b38472.JPEG?aki_policy=xx_large">
+                    <a href=<?php echo("product_page.php?id=".$hebergement[$ii][0])?>><?php echo($hebergement[$ii][1]); ?></a>
+                </div>
+                <?php endfor; ?>
+                <!--<div class="product">
                     <img
                         src="https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-29700095-unapproved/original/77a34b8e-70e1-49c0-b112-0abaa7b38472.JPEG?aki_policy=xx_large">
                     <p>Description</p>
@@ -58,17 +64,13 @@
                     <img
                         src="https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-29700095-unapproved/original/77a34b8e-70e1-49c0-b112-0abaa7b38472.JPEG?aki_policy=xx_large">
                     <p>Description</p>
-                </div>
-                <div class="product">
-                    <img
-                        src="https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-29700095-unapproved/original/77a34b8e-70e1-49c0-b112-0abaa7b38472.JPEG?aki_policy=xx_large">
-                    <p>Description</p>
-                </div>
+                </div> -->
             </div>
         </div>
-
     </main>
+    <?php else :
+        header('Location: connexion.php'); 
+    endif; ?>
+    <footer></footer>
 
 </body>
-
-</html>

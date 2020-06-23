@@ -1,75 +1,97 @@
-<?php
+<?php session_start();
+include "scriptBDD.php";
 
-//include "scriptBDD.php";
+?> 
+<!DOCTYPE html>
+<html lang="fr">
 
-function insertDB($table, $fields, $values){
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
 
-    $sql = "INSERT INTO " . $table . " (";
-    for($i = 0; $i < count($fields)-1; $i++){
-        $sql .= $fields[$i] . ', ';
-    }
-    $sql .= $fields[$i] . ') VALUES (';
+    <!-- icones fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>suivi de projet 3</title>
 
-    for($i = 0; $i < count($values)-1; $i++){
-        $sql .= "'" . $values[$i] . "', ";
-    }
-    $sql .= "'" . $values[$i] . "')";
-    //var_dump($sql);
-  $pdo = connectBDD();
-  $pdo->exec($sql);
-}
+    <!-- icone navigateur -->
+    <link rel="icon" type="image/png" href="image.png" />
 
-function deleteLineDB($table, $fields, $values){
-    $sql = "DELETE FROM " . $table . " WHERE ";
-    for($i = 0; $i < count($fields) - 1; $i++){
-        $sql .= $fields[$i] . '=' . "'" . $values[$i] . "'" . ' AND ';
-    }
-
-    $sql .= $fields[$i] . '=' . "'" . $values[$i] . "'";
-
-    $pdo = connectDB();
-    $pdo->exec($sql);
-}
-
-function updateDB($table, $fields, $values, $condition, $conditionValues){
-    $sql = "UPDATE " . $table . " SET ";
-    for($i = 0; $i < count($fields) - 1; $i++){
-        $sql .= $fields[$i] . '=' . "'" . $values[$i] . "', ";
-    }
-    $sql .= $fields[$i] . '=' . "'" . $values[$i] . "'" . " WHERE ";
-
-    for($i = 0; $i < count($condition); $i++) {
-        $sql .= $condition[$i] . '=' . $conditionValues[$i];
-    }
-
-    $pdo = connectDB();
-    $pdo->exec($sql);
-}
-
-function simpleSelectDB($table){
-    $sql = "SELECT * FROM " . $table;
-    $pdo = connectDB();
-    $pdo->exec($sql);
-}
-
-function specificSelectDB($table, $column){
-    $sql = "SELECT " . $column . " FROM " . $table;
-    var_dump($sql);
-
-    $pdo = connectDB();
-    $pdo->exec($sql);
-}
-
-function rowSelectDB($table, $array1){
-    $sql = "SELECT ";
-    for($i = 0; $i < count($array1) - 1; $i++){
-        $sql .= $array1[$i] . ", ";
-    }
-    $sql .= $array1[$i] . " FROM " . $table;
-
-    $pdo = connectDB();
-    $pdo->exec($sql);
-}
+</head>
 
 
+<body>
+
+    <header>
+        <nav>
+            <a class="logo"><img src="logo3.png"></a>
+            <a href="index.php" class="titre">Blue Hotel</a>
+            <!--<a href="connexion.html">Connexion</a>-->
+        </nav>
+    </header>
+    <?php if (isset($_SESSION['id'])) :
+     header('Location: index.php');
+     else : ?>
+    <main id="connexion">
+
+        <h3>Connexion</h3>
+        <form  action="traitementLogin.php" autocomplete="on" method="post">
+            <div class="flex">
+                <label for="email">Adresse e-mail</label>
+
+                <div>
+                <input id="username" name="login" required="required" type="text" placeholder="Identifiant"/>
+                    <br>
+                </div>
+            </div>
+            <div class="flex">
+                <label for="password">Mot de passe</label>
+                <div>
+                <input id="password" name="mdp" required="required" type="password" placeholder="Mot de passe" />
+                    <br>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <button type="submit">
+                        Connexion
+                    </button>
+                    <br>
+                    <!--
+                    <a href="<?=$prefix?>/auth/reset">
+                        Mot de passe oublié ?
+                    </a>
+                -->
+                    <br>
+                 <!--   <a href="<?=$prefix?>/auth/register">
+                        S'inscrire
+                    </a> -->
+                </div>
+            </div>
+        </form>
+        <p>Pas de compte?</p>
+        <form action="traitementInscription.php" autocomplete="on" method="post">
+            <p>
+                <input id="inscriName" name="nom" required="required" type="text" placeholder="Nom" />
+            </p>
+            <p>
+                <input id="inscriSurname" name="prenom" required="required" type="text" placeholder="Prénom" />
+            </p>
+            <p>
+                <input id="inscriMail" name="mail" required="required" type="text" placeholder="mail" />
+            </p>
+            <p>
+                <input id="inscriPassword" name="mdp" required="required" type="password" placeholder="Mot de passe" />
+            </p>
+            <button type="submit" name="inscription">S'inscrire</button>
+        </form>
+    </main>
+ <?php endif; ?>
+
+
+</body>
+
+</html>

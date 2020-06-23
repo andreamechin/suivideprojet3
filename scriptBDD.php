@@ -1,6 +1,6 @@
 <?php
 
-include "connexion.php";
+include "connexionbdd.php";
 
 function connectBDD() {
     $host = '127.0.0.1';
@@ -159,4 +159,19 @@ function getHeberge($recherche) {
     }
     return;
 
+}
+
+function getHebergeSel($id){
+    $pdo = connectBDD();
+    $rows = $pdo->query("SELECT * FROM logement WHERE logement.idLogem ='".$id."'");
+    $rows = $rows->fetch();
+    $tabHebergeSel = array();
+    array_push($tabHebergeSel, $rows['nom']);
+    array_push($tabHebergeSel, $rows['description']);
+    array_push($tabHebergeSel, $rows['adresse']);
+    array_push($tabHebergeSel, $rows['ville']);
+    array_push($tabHebergeSel, $rows['prix']);
+    array_push($tabHebergeSel, $rows['nbPersonne']);
+
+    return $tabHebergeSel;
 }
