@@ -68,7 +68,9 @@ include "scriptBDD.php";
                             <img src="https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-29700095-unapproved/original/77a34b8e-70e1-49c0-b112-0abaa7b38472.JPEG?aki_policy=xx_large">
                             <p><?php echo($infoLoca[$ii][0]); ?></p>
                             <p>A partir du <?php echo($infoLoca[$ii][5]);?> pendant <?php echo($infoLoca[$ii][6]);?> jours</p>
-                            <button><i class="far fa-times-circle"></i></button>
+                            <form action=<?php echo("traitementSuppressionReservation.php?id=".$infoLoca[$ii][7]);?> method="post">
+                                <button><i class="far fa-times-circle"></i></button>
+                            </form>
                         </div>
                     <?php endfor;
                 else :?> 

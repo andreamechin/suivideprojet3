@@ -134,6 +134,7 @@ function getLoca($idUser) {
             array_push($tabLocaIndiv, $logemCourant['nbPersonne']);
             array_push($tabLocaIndiv, $rows[$ii]['dateDebut']);
             array_push($tabLocaIndiv, $rows[$ii]['dureeJour']);
+            array_push($tabLocaIndiv, $rows[$ii]['idLoca']);
 
             array_push($tabInfoLoca, $tabLocaIndiv);
         }
