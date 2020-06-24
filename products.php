@@ -49,7 +49,7 @@ include "scriptBDD.php";
             </div>
         </div>
         <div class="nouveaux">
-            <h2>Locations correspondantes à votre recherche</h2>
+            <h3>Locations correspondantes à votre recherche</h3>
             <div class="container">
                 <?php for($ii = 0; $ii < sizeof($hebergement); $ii++) :?>
                 <div class="product">
