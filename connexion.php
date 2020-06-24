@@ -65,7 +65,7 @@ include "scriptBDD.php";
             </div>
         </form>
         <div class='compte'>
-          <button onclick="maFonction()">Pas de compte ?</button>
+            <a onclick="maFonction()">Pas de compte ?</a>
         </div>
 
         <div id="sinscrire" style="display:none;">

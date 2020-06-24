@@ -9,10 +9,8 @@ html {
     line-height: 1.8;
     margin: 0;
     color: #262626;
-    background: linear-gradient(
-      rgba(154, 194, 212, 0.212),
-      rgba(154, 194, 212, 0.288)
-    );
+    background: linear-gradient(rgba(154, 194, 212, 0.212),
+        rgba(154, 194, 212, 0.288));
 
     header {
       padding: 30px;
@@ -143,6 +141,7 @@ html {
           font-size: 2rem;
         }
       }
+
       button {
         margin: 10px;
         padding: 7px;
@@ -154,18 +153,18 @@ html {
     /************************************ page connexion **************************************/
     #connexion {
       padding: 10px;
+      text-align: center;
 
-      h3 {
-        text-align: center;
-      }
+      .compte {
+        margin: 10px 0;
 
-      a {
-        text-decoration: none;
-        color: rgb(148, 195, 214);
-      }
+        a {
+          color: rgb(154, 196, 212);
+        }
 
-      a:hover {
-        color: rgb(102, 181, 212);
+        a:hover {
+          color: rgb(128, 206, 236);
+        }
       }
     }
 
@@ -199,6 +198,7 @@ html {
       .favoris {
         text-align: center;
         padding-top: 20px;
+
         .container {
           display: flex;
           justify-content: space-around;
