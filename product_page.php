@@ -85,7 +85,6 @@ include "scriptBDD.php";
             </div>
 
 
-            <!-- Right Column -->
             <div class="right-column">
                 <!-- Product Description -->
                 <div class="product-description">
@@ -99,13 +98,18 @@ include "scriptBDD.php";
                 <div class="product-price">
                     <span><?php echo($tabHebergeSel[4]);?>€ par nuit</span>
                 </div>
-                <div>
+                <div class="traitementReservation">
                     <form action=<?php echo("traitementReservation.php?id=".$_GET['id']);?> method="post">
-                        <p>Date début</p>
-                        <input id="date" name="date" required="required" type="date">
-                        <p>Nombre de jour</p>
-                        <input id="nbJour" name="nbJour" required="required" type="number" min="1" placeholder="Nombre de jour"/> 
-                        <button type="submit" name="reserver"/>Je réserve !</button>    
+                        <div class="flex">
+                            <p>Date début</p>
+                            <input id="date" name="date" required="required" type="date">
+                        </div>
+                        <div class="flex">
+                            <p>Nombre de jour</p>
+                            <input id="nbJour" name="nbJour" required="required" type="number" min="1"
+                                placeholder="Nombre de jour" />
+                        </div>
+                        <button type="submit" name="reserver" />Je réserve !</button>
                     </form>
                 </div>
             </div>
