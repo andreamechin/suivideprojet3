@@ -28,7 +28,7 @@ function deleteLineDB($table, $fields, $values){
 
     $sql .= $fields[$i] . '=' . "'" . $values[$i] . "'";
 
-    $pdo = connectDB();
+    $pdo = connectBDD();
     $pdo->exec($sql);
 }
 
@@ -43,13 +43,13 @@ function updateDB($table, $fields, $values, $condition, $conditionValues){
         $sql .= $condition[$i] . '=' . $conditionValues[$i];
     }
 
-    $pdo = connectDB();
+    $pdo = connectBDD();
     $pdo->exec($sql);
 }
 
 function simpleSelectDB($table){
     $sql = "SELECT * FROM " . $table;
-    $pdo = connectDB();
+    $pdo = connectBDD();
     $pdo->exec($sql);
 }
 
@@ -57,7 +57,7 @@ function specificSelectDB($table, $column){
     $sql = "SELECT " . $column . " FROM " . $table;
     var_dump($sql);
 
-    $pdo = connectDB();
+    $pdo = connectBDD();
     $pdo->exec($sql);
 }
 
@@ -68,7 +68,7 @@ function rowSelectDB($table, $array1){
     }
     $sql .= $array1[$i] . " FROM " . $table;
 
-    $pdo = connectDB();
+    $pdo = connectBDD();
     $pdo->exec($sql);
 }
 
