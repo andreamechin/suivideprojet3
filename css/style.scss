@@ -146,9 +146,15 @@ html {
 
       .right-column {
         float: right;
-        margin-top: -450px;
+        margin-top: -440px;
         padding-right: 20px;
         text-align: center;
+
+        .product-description {
+          .adresse {
+            font-style: italic;
+          }
+        }
 
         .traitementReservation {
           margin-top: 30px;

@@ -157,9 +157,13 @@ html body .product_page .demo:hover {
 
 html body .product_page .right-column {
   float: right;
-  margin-top: -450px;
+  margin-top: -440px;
   padding-right: 20px;
   text-align: center;
+}
+
+html body .product_page .right-column .product-description .adresse {
+  font-style: italic;
 }
 
 html body .product_page .right-column .traitementReservation {
