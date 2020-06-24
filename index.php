@@ -22,7 +22,10 @@ include "scriptBDD.php";
 </head>
 
 <body>
-    <?php if (isset($_SESSION['id'])) :?>
+    <?php if (isset($_SESSION['id'])) :
+        $tabNew = getNew();
+        //var_dump($tabNew);
+    ?>
     <header>
         <nav>
             <a class="logo"><img src="logo3.png"></a>
@@ -49,21 +52,13 @@ include "scriptBDD.php";
         <div class="nouveaux">
             <h3>Les nouveautés</h3>
             <div class="container">
+                <?php for($ii = 0 ; $ii < 3 ; $ii++) :?>
                 <div class="product">
                     <img
                         src="https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-29700095-unapproved/original/77a34b8e-70e1-49c0-b112-0abaa7b38472.JPEG?aki_policy=xx_large">
-                    <p>Description</p>
+                    <a href=<?php echo("product_page.php?id=".$tabNew[$ii][0])?>><?php echo($tabNew[$ii][1])?></a>
                 </div>
-                <div class="product">
-                    <img
-                        src="https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-29700095-unapproved/original/77a34b8e-70e1-49c0-b112-0abaa7b38472.JPEG?aki_policy=xx_large">
-                    <p>Description</p>
-                </div>
-                <div class="product">
-                    <img
-                        src="https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-29700095-unapproved/original/77a34b8e-70e1-49c0-b112-0abaa7b38472.JPEG?aki_policy=xx_large">
-                    <p>Description</p>
-                </div>
+            <?php endfor;?>
             </div>
         </div>
     </main>

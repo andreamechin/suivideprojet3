@@ -3,6 +3,7 @@
 include "connexionbdd.php";
 
 function connectBDD() {
+//  A changer en fonciton de la bdd utilisée
     $host = '127.0.0.1';
     $port = '3306';
     $db = 'blueHotel';
@@ -175,4 +176,16 @@ function getHebergeSel($id){
     array_push($tabHebergeSel, $rows['nbPersonne']);
 
     return $tabHebergeSel;
+}
+
+function getNew(){
+    $pdo = connectBDD();
+    $rows = $pdo->query("SELECT * FROM logement");
+    $rows = $rows->fetchAll();
+    $tabNew = array();
+
+    for($ii = 0 ; $ii < 3 ; $ii++){
+        array_push($tabNew, $rows[$ii]);
+    } 
+    return $tabNew;
 }
