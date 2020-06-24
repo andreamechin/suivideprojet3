@@ -31,7 +31,7 @@ Create table Location (
 );
 
 
-INSERT INTO Utilisateur(idUtili,nom,prenom,mail,mdp) VALUES (1, 'Andréa', 'Méchin','andréa@gmail.com','andrea123');
+INSERT INTO Utilisateur(idUtili,nom,prenom,mail,mdp) VALUES (1, 'Andréa', 'Méchin','andrea@gmail.com','andrea123');
 INSERT INTO Utilisateur(idUtili,nom,prenom,mail,mdp) VALUES (2, 'Mechin', 'Aymeric','mechin@gmail.com','mechin123');
 INSERT INTO Utilisateur(idUtili,nom,prenom,mail,mdp) VALUES (3, 'Aymeric', 'Jacob','aymeric@gmail.com','aymeric123');
 INSERT INTO Utilisateur(idUtili,nom,prenom,mail,mdp) VALUES (4, 'Jacob', 'Andréa','jacob@gmail.com','jacob123');

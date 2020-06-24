@@ -34,7 +34,7 @@ include "scriptBDD.php";
   <?php if (isset($_SESSION['id'])) : 
     //var_dump($_GET['id']);
     $tabHebergeSel = getHebergeSel($_GET['id']);
-    var_dump($tabHebergeSel);
+    //var_dump($tabHebergeSel);
   ?>
     <main class="product_page">
 
