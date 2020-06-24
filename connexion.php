@@ -60,38 +60,64 @@ include "scriptBDD.php";
                         Connexion
                     </button>
                     <br>
-                    <!--
-                    <a href="<?=$prefix?>/auth/reset">
-                        Mot de passe oublié ?
-                    </a>
-                -->
-                    <br>
-                 <!--   <a href="<?=$prefix?>/auth/register">
-                        S'inscrire
-                    </a> -->
+    
                 </div>
             </div>
         </form>
-        <p>Pas de compte?</p>
-        <form action="traitementInscription.php" autocomplete="on" method="post">
-            <p>
-                <input id="inscriName" name="nom" required="required" type="text" placeholder="Nom" />
-            </p>
-            <p>
-                <input id="inscriSurname" name="prenom" required="required" type="text" placeholder="Prénom" />
-            </p>
-            <p>
-                <input id="inscriMail" name="mail" required="required" type="text" placeholder="mail" />
-            </p>
-            <p>
-                <input id="inscriPassword" name="mdp" required="required" type="password" placeholder="Mot de passe" />
-            </p>
-            <button type="submit" name="inscription">S'inscrire</button>
-        </form>
+        <div class='compte'>
+            <a onclick="maFonction()">Pas de compte ?</a>
+        </div>
+
+        <div id="sinscrire" style="display:none;">
+            <form action="traitementInscription.php" autocomplete="on" method="post">
+
+                <div class="flex">
+                        <label for="email">Votre nom</label>
+                        <div>
+                            <input id="inscriName" name="nom" required="required" type="text" placeholder="Nom" />
+                        <br>
+                        </div>
+                </div>
+
+                <div class="flex">
+                    <label for="email">Votre prénom</label>
+                    <div>
+                        <input id="inscriSurname" name="prenom" required="required" type="text" placeholder="Prénom" />
+                    <br>
+                    </div>
+                </div>
+                <div class="flex">
+                    <label for="email">Adresse e-mail</label>
+                    <div>
+                        <input id="inscriMail" name="mail" required="required" type="text" placeholder="Adresse e-mail" />
+                    <br>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <label for="email">Mot de passe</label>
+                    <div>
+                        <input id="inscriPassword" name="mdp" required="required" type="password" placeholder="Mot de passe" />
+                    <br>
+                    </div>
+
+                </div>
+                <button type="submit" name="inscription">S'inscrire</button>
+            </form>
+     </div>
     </main>
  <?php endif; ?>
 
-
+<script>
+    function maFonction() {
+    var div = document.getElementById("sinscrire");
+    if (div.style.display === "none") {
+        div.style.display = "block";
+    } else {
+        div.style.display = "none";
+    }
+    }
+</script>
 </body>
 
 </html>
