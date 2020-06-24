@@ -88,7 +88,7 @@ include "scriptBDD.php";
             <div class="right-column">
                 <!-- Product Description -->
                 <div class="product-description">
-                    <h1><?php echo($tabHebergeSel[0]);?></h1>
+                    <h3><?php echo($tabHebergeSel[0]);?></h3>
                     <p><?php echo($tabHebergeSel[1]);?></p>
                     <p><?php echo($tabHebergeSel[2]);?>, <?php echo($tabHebergeSel[3]);?></p>
                     <p>Location pour <?php echo($tabHebergeSel[5]);?> personne(s) max.</p>
