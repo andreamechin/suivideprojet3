@@ -62,7 +62,7 @@ html body main {
 
 html body main .titre {
   padding-top: 20px;
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -237,5 +237,14 @@ html body .profil .favoris .container .product {
 html body .profil .favoris .container .product img {
   width: 100%;
   border-radius: 40px;
+}
+
+html body .profil .favoris .container .product button {
+  border: none;
+  background-color: rgba(154, 194, 212, 0);
+}
+
+html body .profil .favoris .container .product button i {
+  color: red;
 }
 /*# sourceMappingURL=style.css.map */

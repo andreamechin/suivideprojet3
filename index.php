@@ -47,7 +47,7 @@ include "scriptBDD.php";
         </div>
 
         <div class="nouveaux">
-            <h2>Les nouveautés</h2>
+            <h3>Les nouveautés</h3>
             <div class="container">
                 <div class="product">
                     <img
