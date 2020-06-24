@@ -9,8 +9,10 @@ html {
     line-height: 1.8;
     margin: 0;
     color: #262626;
-    background: linear-gradient(rgba(154, 194, 212, 0.212),
-        rgba(154, 194, 212, 0.288));
+    background: linear-gradient(
+      rgba(154, 194, 212, 0.212),
+      rgba(154, 194, 212, 0.288)
+    );
 
     header {
       padding: 30px;
@@ -28,6 +30,11 @@ html {
             height: 80px;
             margin-top: -20px;
           }
+        }
+
+        .user {
+          padding: 0 20px;
+          font-size: 2rem;
         }
 
         a:hover {

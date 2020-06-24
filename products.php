@@ -28,7 +28,10 @@ include "scriptBDD.php";
         <nav>
             <a class="logo"><img src="logo3.png"></a>
             <a href="index.php" class="titre">Blue Hotel</a>
-            <a href="traitementDeco.php">Déconnexion</a>
+            <div>
+                <a href="profil.php" class='user'><i class="fas fa-user"></i></a>
+                <a href="traitementDeco.php">Déconnexion</a>
+            </div>
         </nav>
     </header>
   <?php if (isset($_SESSION['id'])) :

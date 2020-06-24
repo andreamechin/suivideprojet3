@@ -40,6 +40,11 @@ html body header nav a img {
   margin-top: -20px;
 }
 
+html body header nav .user {
+  padding: 0 20px;
+  font-size: 2rem;
+}
+
 html body header nav a:hover {
   color: rgba(154, 195, 212, 0.651);
 }
@@ -164,19 +169,19 @@ html body .product_page button {
 
 html body #connexion {
   padding: 10px;
-}
-
-html body #connexion h3 {
   text-align: center;
 }
 
-html body #connexion a {
-  text-decoration: none;
-  color: #94c3d6;
+html body #connexion .compte {
+  margin: 10px 0;
 }
 
-html body #connexion a:hover {
-  color: #66b5d4;
+html body #connexion .compte a {
+  color: #9ac4d4;
+}
+
+html body #connexion .compte a:hover {
+  color: #80ceec;
 }
 
 html body .profil .container {
